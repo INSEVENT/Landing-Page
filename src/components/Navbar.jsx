@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 import { close, logo, menu } from "../assets";
 import { navLinks } from "../constants";
 
@@ -8,7 +8,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="w-full flex py-4 justify-between items-center fixed top-0 bg-primary px-14 z-50">
+    <nav className="w-full flex py-2 justify-between items-center fixed top-0 bg-primary px-14 z-50">
       <div className="flex justify-start w-1/4">
         <img src={logo} alt="insevent" className="w-[80px] h-[80px]" />
       </div>
@@ -23,16 +23,20 @@ const Navbar = () => {
               } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
               onClick={() => setActive(nav.title)}
             >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              <Link to={`/${nav.id}`} onClick={() => setToggle(false)}>
+                {nav.title}
+              </Link>
             </li>
           ))}
         </ul>
       </div>
 
       <div className="flex justify-end w-1/4">
-        <button className="px-4 py-2 bg-blue-500 text-white rounded font-poppins font-normal">
-          Login
-        </button>
+        <Link to="/login">
+          <button className="px-4 py-2 bg-blue-gradient text-black rounded font-poppins font-medium">
+            Login
+          </button>
+        </Link>
       </div>
 
       <div className="sm:hidden flex flex-1 justify-end items-center">
