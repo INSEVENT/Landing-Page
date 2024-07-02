@@ -2,11 +2,11 @@ import { facebook, instagram, linkedin, twitter, logo } from "../assets";
 
 export const navLinks = [
   {
-    id: "home",
+    id: "",
     title: "Home",
   },
   {
-    id: "events",
+    id: "#events",
     title: "Event",
   },
   {
@@ -38,6 +38,21 @@ export const sponsor = [
   },
   {
     id: "sponsor-6",
+    value: logo,
+  },
+];
+
+export const speaker = [
+  {
+    id: "speaker-1",
+    value: logo,
+  },
+  {
+    id: "speaker-2",
+    value: logo,
+  },
+  {
+    id: "speaker-3",
     value: logo,
   },
 ];

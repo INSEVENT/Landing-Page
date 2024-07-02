@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 import { close, logo, menu } from "../assets";
 import { navLinks } from "../constants";
 
@@ -23,16 +23,20 @@ const Navbar = () => {
               } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
               onClick={() => setActive(nav.title)}
             >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              <Link to={`/${nav.id}`} onClick={() => setToggle(false)}>
+                {nav.title}
+              </Link>
             </li>
           ))}
         </ul>
       </div>
 
       <div className="flex justify-end w-1/4">
-        <button className="px-4 py-2 bg-blue-500 text-white rounded font-poppins font-normal">
-          Login
-        </button>
+        <Link to="/login">
+          <button className="px-4 py-2 bg-blue-gradient text-black rounded font-poppins font-medium">
+            Login
+          </button>
+        </Link>
       </div>
 
       <div className="sm:hidden flex flex-1 justify-end items-center">
