@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import Talkshow from "./pages/Talkshow";
 import Event from "./pages/Event";
@@ -21,6 +21,7 @@ function App(){
       <Route path="/" element={<LandingPage />} />
       <Route path="/talkshow" element={<Talkshow />} />
       <Route path="/event/:id" element={<Event />} />
+      <Route path="/event/1" element={<Navigate to='/talkshow' />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
     </Routes>
