@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Axios from 'axios';
 
-function LandingPage(){
+function Event(){
   const { id } = useParams();
   const [getKonten,setKonten]= useState([]);
   const getProducts = async () => {
@@ -26,4 +26,4 @@ function LandingPage(){
   )
 };
 
-export default LandingPage;
+export default Event;

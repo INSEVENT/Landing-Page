@@ -24,5 +24,7 @@ module.exports = {
       xl: "1700px",
     },
   },
-  plugins: [],
+  plugins: [
+    require('daisyui'),
+  ],
 };

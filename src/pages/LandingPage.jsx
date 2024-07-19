@@ -1,5 +1,4 @@
 import styles from "../style";
-import Navbar from "../components/Navbar";
 import Hero from "../components/LandingPage/Hero";
 import Events from "../components/LandingPage/Events";
 import FAQ from "../components/FAQ";
@@ -7,7 +6,6 @@ import Artist from "../components/LandingPage/Artist";
 import CTA from "../components/LandingPage/CTA";
 import Sponsorship from "../components/Sponsorship";
 import CardDeal from "../components/LandingPage/CardDeal";
-import Footer from "../components/Footer";
 import List from "../components/LandingPage/List";
 
 const LandingPage = () => (
@@ -49,12 +47,6 @@ const LandingPage = () => (
     <div className={`bg-black ${styles.paddingX} ${styles.flexCenter}`}>
       <div className={`${styles.boxWidth}`}>
         <CardDeal />
-      </div>
-    </div>
-
-    <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
-      <div className={`${styles.boxWidth}`}>
-        <Footer />
       </div>
     </div>
   </div>
