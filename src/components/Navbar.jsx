@@ -22,6 +22,7 @@ const Navbar = () => {
                 active === nav.title ? "text-white" : "text-dimWhite"
               } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
               onClick={() => setActive(nav.title)}
+              style={{ whiteSpace: "nowrap" }} // Tambahkan properti whiteSpace di sini
             >
               <Link to={`/${nav.id}`} onClick={() => setToggle(false)}>
                 {nav.title}
@@ -31,7 +32,7 @@ const Navbar = () => {
         </ul>
       </div>
 
-      <div className="flex justify-end w-1/4">
+      <div className="hidden sm:flex justify-end w-1/4">
         <Link to="/login">
           <button className="px-4 py-2 bg-blue-gradient text-black rounded font-poppins font-medium">
             Login
@@ -61,9 +62,21 @@ const Navbar = () => {
                 } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
                 onClick={() => setActive(nav.title)}
               >
-                <a href={`#${nav.id}`}>{nav.title}</a>
+                <Link to={`/${nav.id}`} onClick={() => setToggle(false)}>
+                  {nav.title}
+                </Link>
               </li>
             ))}
+
+            <li>
+              <div className="block sm:hidden flex justify-end w-1/4 mx-9 my-4">
+                <Link to="/login">
+                  <button className="px-4 py-2 bg-blue-gradient text-black rounded font-poppins font-medium">
+                    Login
+                  </button>
+                </Link>
+              </div>
+            </li>
           </ul>
         </div>
       </div>

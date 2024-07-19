@@ -50,54 +50,50 @@ const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <main className="h-screen p-5">
-      <div className="flex justify-center items-start my-2">
-        <div className="w-full sm:w-10/12 md:w-3/4 my-1">
-          <h2 className={`${styles.heading2} text-gradient mb-5 text-center`}>
-            We Are Aware of <span className="font-bold">Your Opinions</span>
-          </h2>
-          <p className="font-poppins m-5 text-center text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-            architecto ut quasi assumenda. Dicta reiciendis iusto aut eos
-            dolorum. Id deserunt aspernatur quisquam libero illum voluptate
-            dolore qui atque repellat?
-          </p>
-          <ul className="flex flex-col">
-            <AccordionItem
-              idx={1}
-              title="FAQ 1"
-              activeIndex={activeIndex}
-              setActiveIndex={setActiveIndex}
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-              magnam at exercitationem culpa sed explicabo, dolor praesentium
-              similique cupiditate laboriosam amet earum laborum ratione natus
-              deserunt placeat voluptatum ipsum fugiat.
-            </AccordionItem>
-            <AccordionItem
-              idx={2}
-              title="FAQ 2"
-              activeIndex={activeIndex}
-              setActiveIndex={setActiveIndex}
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-              magnam at exercitationem culpa sed explicabo, dolor praesentium
-              similique cupiditate laboriosam amet earum laborum ratione natus
-              deserunt placeat voluptatum ipsum fugiat.
-            </AccordionItem>
-            <AccordionItem
-              idx={3}
-              title="FAQ 3"
-              activeIndex={activeIndex}
-              setActiveIndex={setActiveIndex}
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-              magnam at exercitationem culpa sed explicabo, dolor praesentium
-              similique cupiditate laboriosam amet earum laborum ratione natus
-              deserunt placeat voluptatum ipsum fugiat.
-            </AccordionItem>
-          </ul>
-        </div>
+    <main className="h-screen p-5 flex justify-center items-center">
+      <div className="flex flex-col justify-center items-center w-full sm:w-10/12 md:w-3/4 my-1">
+        <h2 className="font-poppins font-semibold xs:text-[40px] text-[24px] text-white xs:leading-[60px] leading-[40px] w-full text-gradient text-center">
+          Pertanyaan yang Sering Diajukan{" "}
+          <span className="font-bold">(FAQ)</span>
+        </h2>
+        <p className="font-poppins m-5 text-center text-white">
+          Berikut adalah panduan cepat untuk membantu Anda memahami lebih banyak
+          tentang INSEVENT.
+        </p>
+        <ul className="flex flex-col text-black">
+          <AccordionItem
+            idx={1}
+            title="Apa itu INSEVENT?"
+            activeIndex={activeIndex}
+            setActiveIndex={setActiveIndex}
+          >
+            INSEVENT adalah kegiatan tahunan yang diselenggarakan oleh
+            Information System Association (INFORSA) yang ditujukan untuk
+            memperingati hari ulang tahun Program Studi Sistem Informasi,
+            Universitas Mulawarman dan INFORSA dengan berbagai macam rangkaian
+            kegiatan.
+          </AccordionItem>
+          <AccordionItem
+            idx={2}
+            title="Apa Saja Event yang terdapat di INSEVENT?"
+            activeIndex={activeIndex}
+            setActiveIndex={setActiveIndex}
+          >
+            Event yang terdapat mulai dari perlombaan regional hingga nasional,
+            talkshow, kegiatan sosial, pameran karya, serta closing ceremony.
+          </AccordionItem>
+          {/* <AccordionItem
+        idx={3}
+        title="FAQ 3"
+        activeIndex={activeIndex}
+        setActiveIndex={setActiveIndex}
+      >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
+        magnam at exercitationem culpa sed explicabo, dolor praesentium
+        similique cupiditate laboriosam amet earum laborum ratione natus
+        deserunt placeat voluptatum ipsum fugiat.
+      </AccordionItem> */}
+        </ul>
       </div>
     </main>
   );

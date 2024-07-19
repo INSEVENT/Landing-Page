@@ -23,13 +23,13 @@ const Register = () => {
         <div className="flex-1 flex flex-col">
           <h2 className={`${styles.heading2} text-gradient`}>Register</h2>
           <form onSubmit={handleRegister} className="flex flex-col gap-4 mt-4">
-            <div>
+            <div className="flex flex-col sm:flex-row">
               <input
                 type="name"
                 placeholder="First Name"
                 value={fisrtName}
                 onChange={(e) => setFirstName(e.target.value)}
-                className="mr-5 py-2 px-4 rounded-[10px] bg-white text-gray-800 outline-none"
+                className="mb-4 sm:mb-0 sm:mr-5 py-2 px-4 rounded-[10px] bg-white text-gray-800 outline-none"
                 required
               />
               <input

@@ -9,21 +9,22 @@ const Artist = () => (
 
     <div className={layout.sectionInfo}>
       <h2 className={styles.heading2}>
-        Meet Our <span className="font-bold text-gradient">Artist</span>
+        Temui <span className="font-bold text-gradient">Guest Star</span>
       </h2>
-      <h4 className="text-white font-poppins">Artist Name</h4>
+      {/* <h4 className="text-white font-poppins">Artist Name</h4> */}
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores
-        reprehenderit explicabo exercitationem, repudiandae ab harum, odio
-        dolore amet quae est eligendi rem quos inventore! Similique, at impedit?
-        Dolorum, quas minus?
+        Jangan lewatkan kesempatan untuk bertemu dengan bintang tamu spesial
+        kami! Nikmati penampilan memukau dan interaksi langsung dengan guest
+        star yang akan membuat acara penutupan ini semakin berkesan. Bersiaplah
+        untuk terinspirasi dan terhibur oleh bakat luar biasa yang akan mengisi
+        malam kita.
       </p>
-      <button
+      {/* <button
         type="button"
         className={`mt-5 py-4 px-6 font-poppins font-medium text-[18px] text-primary bg-blue-gradient rounded-[10px] outline-none ${styles}`}
       >
         See More
-      </button>
+      </button> */}
     </div>
   </section>
 );

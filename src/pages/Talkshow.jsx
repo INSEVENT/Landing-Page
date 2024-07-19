@@ -5,21 +5,20 @@ import About from "../components/Talkshow/About";
 import Speaker from "../components/Talkshow/Speaker";
 import CTA from "../components/Talkshow/CTA";
 import Sponsorship from "../components/Sponsorship";
-import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
-import Axios from 'axios';
+import Axios from "axios";
 
-function Talkshow (){
-  const [getKonten,setKonten]= useState([]);
+function Talkshow() {
+  const [getKonten, setKonten] = useState([]);
   const getProducts = async () => {
     const response = await Axios.get(`${import.meta.env.VITE_API_GET_EVENT}/1`);
     setKonten(response.data);
-    };
+  };
   useEffect(() => {
-      getProducts();
-      window.scrollTo(0, 0);
-    }, []); 
-  return(  
+    getProducts();
+    window.scrollTo(0, 0);
+  }, []);
+  return (
     <div className="bg-primary w-full overflow-hidden">
       <div className={`${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
@@ -29,7 +28,7 @@ function Talkshow (){
 
       <div className={`bg-primary ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
-          <Hero getkonten={getKonten}/>
+          <Hero getkonten={getKonten} />
         </div>
       </div>
 
@@ -46,14 +45,8 @@ function Talkshow (){
           <Sponsorship />
         </div>
       </div>
-
-      <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
-        <div className={`${styles.boxWidth}`}>
-          <Footer />
-        </div>
-      </div>
     </div>
-  )
-};
+  );
+}
 
 export default Talkshow;
