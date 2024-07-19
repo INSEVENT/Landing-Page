@@ -1,5 +1,4 @@
-import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import Talkshow from "./pages/Talkshow";
 import Event from "./pages/Event";
@@ -12,22 +11,34 @@ import DonorDarah from "./pages/DonorDarah";
 import Lomba from "./pages/Lomba";
 
 function App() {
+  const location = useLocation();
+  const isLoggedIn = localStorage.getItem("token") !== null;
+  const isLoginOrRegister = location.pathname === '/Login' || location.pathname === '/register' || location.pathname === '/login';
   return (
     <div>
       <div className={`${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
-          <Navbar />
+          {!isLoginOrRegister && <Navbar />}
         </div>
       </div>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/talkshow" element={<Talkshow />} />
-        <Route path="/lomba" element={<Lomba />} />
-        <Route path="/event/:id" element={<Event />} />
-        <Route path="/event/1" element={<Navigate to="/talkshow" />} />
-        <Route path="/donordarah" element={<DonorDarah />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route exact path='/*' element={<Navigate to='/'/>} />
+        <Route exact path='*' element={<Navigate to='/'/>} />
+        {isLoggedIn? 
+        <>
+          <Route path='/login' element={<Navigate to='/'/>} />
+          <Route path="/event/:id" element={<Event />} />
+        </>:
+        <>
+          <Route path="/talkshow" element={<Talkshow />} />
+          <Route path="/lomba" element={<Lomba />} />
+          <Route path="/event/:id" element={<Event />} />
+          <Route path="/event/1" element={<Navigate to="/talkshow" />} />
+          <Route path="/donordarah" element={<DonorDarah />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </>}
       </Routes>
       <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>

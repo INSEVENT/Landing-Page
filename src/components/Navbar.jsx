@@ -1,12 +1,35 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { close, logo, menu } from "../assets";
 import { navLinks } from "../constants";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
+  const isLoggedIn = localStorage.getItem("token") !== null;
+  const navigate = useNavigate();
 
+  const logOut = () => {
+    Swal.fire({
+      title: "Yakin untuk Keluar?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Ya, Keluar!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem("token");
+        localStorage.removeItem("email");
+        navigate("/");
+        Swal.fire({
+          title: "Keluar Berhasil",
+          icon: "success",
+        });
+      }
+    });
+  }
   return (
     <nav className="w-full flex py-2 justify-between items-center fixed top-0 bg-primary px-14 z-50">
       <div className="flex justify-start w-1/4">
@@ -33,11 +56,17 @@ const Navbar = () => {
       </div>
 
       <div className="hidden sm:flex justify-end w-1/4">
-        <Link to="/login">
-          <button className="px-4 py-2 bg-blue-gradient text-black rounded font-poppins font-medium">
-            Login
-          </button>
-        </Link>
+        {isLoggedIn ? (
+              <>
+                <button onClick={logOut} className='lg:ml-4 inline-block bg-red-800 text-white text-sm px-4 py-3 leading-none rounded border-transparent hover:border-gray-400'>Keluar</button>
+              </>
+            ) : (
+              <Link to="/login">
+                <button className="px-4 py-2 bg-blue-gradient text-black rounded font-poppins font-medium">
+                  Login
+                </button>
+              </Link>
+            )}
       </div>
 
       <div className="sm:hidden flex flex-1 justify-end items-center">
@@ -68,7 +97,7 @@ const Navbar = () => {
               </li>
             ))}
 
-            <li>
+            {/* <li>
               <div className="block sm:hidden flex justify-end w-1/4 mx-9 my-4">
                 <Link to="/login">
                   <button className="px-4 py-2 bg-blue-gradient text-black rounded font-poppins font-medium">
@@ -76,7 +105,7 @@ const Navbar = () => {
                   </button>
                 </Link>
               </div>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
