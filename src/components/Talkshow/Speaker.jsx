@@ -5,11 +5,11 @@ const Speaker = () => (
   <section
     className={`${styles.flexCenter} text-center flex-row flex-wrap sm:mb-20 mb-6`}
   >
-    <h4 className="font-poppins font-semibold xs:text-[20px] text-[16px] text-gradient w-full">
-      Let's see the hero
+    <h4 className="font-poppins font-semibold xs:text-[18px] text-[16px] text-gradient w-full">
+      Mari Kita Lihat Sang Pembicara
     </h4>
     <h4 className="font-poppins font-semibold xs:text-[28px] text-[24px] text-white w-full">
-      Meet Our Speaker
+      Temui Pembicara Kami
     </h4>
     {speaker.map((spns) => (
       <div

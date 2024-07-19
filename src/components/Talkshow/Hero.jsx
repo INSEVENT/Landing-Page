@@ -2,20 +2,20 @@ import styles from "../../style";
 import { logo } from "../../assets";
 import Button from "../Button";
 
-const Hero = ({getkonten}) => {
+const Hero = ({ getkonten }) => {
   const sliceText = (text, wordLimit) => {
-    const words = text.split(' ');
+    const words = text.split(" ");
     if (words.length <= wordLimit) {
       return text;
     }
-    return words.slice(0, wordLimit).join(' ');
+    return words.slice(0, wordLimit).join(" ");
   };
   return (
     <section
       id="home"
       className={`mt-20 flex md:flex-row flex-col ${styles.paddingY}`}
     >
-      {getkonten.map((item,idx)=>(
+      {getkonten.map((item, idx) => (
         <div
           key={idx}
           className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}
@@ -35,13 +35,14 @@ const Hero = ({getkonten}) => {
             </h1>
 
             <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-              {new Date(item.Start_Date).toLocaleString().slice(0,9)} | At Mulawarman University
+              {new Date(item.Start_Date).toLocaleString().slice(0, 9)} | At
+              Mulawarman University
             </p>
             <button
               type="button"
               className={`py-4 mt-10 px-6 font-poppins font-medium text-[18px] text-primary bg-blue-gradient rounded-[10px] outline-none ${styles}`}
             >
-              Register
+              Daftar
             </button>
           </div>
 

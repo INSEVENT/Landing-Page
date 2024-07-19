@@ -51,12 +51,6 @@ const LandingPage = () => (
         <CardDeal />
       </div>
     </div>
-
-    <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
-      <div className={`${styles.boxWidth}`}>
-        <Footer />
-      </div>
-    </div>
   </div>
 );
 
